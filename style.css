@@ -1,3 +1,4 @@
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +6,9 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,36 +17,120 @@ body {
 
 .game-container {
   width: 80%;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
 }
 
-header {
+/* Navbar */
+.navbar {
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1f1f1f;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Race Section */
+.race-header {
   margin-bottom: 20px;
 }
 
 .race-track {
-  width: 100%;
-  height: 200px;
-  background-color: #ddd;
   position: relative;
+  background-color: #2b2b2b;
+  border-radius: 15px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.player {
-  width: 100%;
-  height: 50px;
+.track-lane {
+  position: relative;
+  height: 60px;
+  margin-bottom: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.car-container {
   position: absolute;
-  top: 25px;
-}
-
-#player1 {
-  top: 50px;
-}
-
-#player2 {
-  top: 150px;
+  top: 10px;
+  left: 0;
+  height: 50px;
+  width: 100px;
 }
 
 .car {
-  width: 100px
+  height: 50px;
+  width: 100px;
+  background-color: red;
+  border-radius: 5px;
+  background-image: url('https://via.placeholder.com/100x50');
+  background-size: cover;
+}
+
+.player-car {
+  background-color: blue;
+}
+
+.bot-car {
+  background-color: red;
+}
+
+/* Progress bar for players */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background-color: #4caf50;
+  transition: width 0.3s;
+}
+
+/* Typing Area */
+.text-display {
+  margin: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 2px solid #444;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+/* Stats */
+.stats {
+  margin: 20px;
+}
+
+.race-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.race-btn:hover {
+  background-color: #45a049;
+}
+
+footer {
+  margin-top: 20px;
+}
