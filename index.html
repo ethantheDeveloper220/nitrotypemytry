@@ -8,67 +8,86 @@
 </head>
 <body>
   <div class="game-container">
-    
+
     <!-- Navigation -->
-    <nav>
+    <nav class="navbar">
       <button id="loginBtn">Login</button>
       <button id="signupBtn">Sign Up</button>
       <button id="storeBtn">Store</button>
+      <button id="betaBtn">Beta Features</button> <!-- New Beta Button -->
     </nav>
 
-    <!-- Login Form -->
-    <div class="form-container" id="loginForm" style="display: none;">
-      <h2>Login</h2>
-      <input type="text" id="loginUsername" placeholder="Username">
-      <input type="password" id="loginPassword" placeholder="Password">
-      <button id="loginSubmit">Submit</button>
-    </div>
-
-    <!-- Signup Form -->
-    <div class="form-container" id="signupForm" style="display: none;">
+    <!-- Sign-Up Form -->
+    <div class="signup-form" id="signupForm" style="display: none;">
       <h2>Sign Up</h2>
-      <input type="text" id="signupUsername" placeholder="Username">
-      <input type="password" id="signupPassword" placeholder="Password">
-      <button id="signupSubmit">Submit</button>
+      <form id="signUpForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" min="13" required>
+
+        <label for="reason">Why do you want to play?</label>
+        <textarea id="reason" placeholder="Enter your reason" required></textarea>
+
+        <button type="submit">Sign Up</button>
+        <p id="error-message" style="color: red;"></p>
+      </form>
     </div>
 
-    <!-- Store -->
-    <div class="store-container" id="store" style="display: none;">
-      <h2>Store</h2>
-      <p>Purchase upgrades here (future feature)</p>
-      <button id="closeStore">Close</button>
-    </div>
-
-    <!-- Race Section -->
-    <header>
-      <h1>Typing Race</h1>
-    </header>
+    <!-- Main Game Content -->
+    <div class="main-content">
+      <header class="race-header">
+        <h1>Typing Race</h1>
+      </header>
     
-    <div class="race-track">
-      <div class="player" id="player1">
-        <div class="car"></div>
+      <div class="race-track">
+        <div class="track-lane">
+          <div class="car-container" id="player1">
+            <div class="car player-car"></div>
+          </div>
+          <div class="progress-bar" id="player1-progress"></div>
+        </div>
+        <div class="track-lane">
+          <div class="car-container" id="bot">
+            <div class="car bot-car"></div>
+          </div>
+          <div class="progress-bar" id="bot-progress"></div>
+        </div>
       </div>
-      <div class="player" id="bot">
-        <div class="car"></div>
+
+      <div class="text-display">
+        <p id="text-to-type">Click 'Race Bot' to start!</p>
       </div>
+      
+      <input type="text" id="text-input" placeholder="Start typing..." disabled/>
+
+      <div class="stats">
+        <p>Current WPM: <span id="currentWPM">0</span></p>
+        <p>Average WPM: <span id="averageWPM">0</span></p>
+      </div>
+
+      <button id="raceBtn" class="race-btn">Race Bot</button>
+
+      <footer>
+        <p>Type fast to win the race!</p>
+      </footer>
     </div>
 
-    <div class="text-display">
-      <p id="text-to-type">Click 'Race Bot' to start!</p>
-    </div>
-    
-    <input type="text" id="text-input" placeholder="Start typing..." disabled/>
-
-    <div class="stats">
-      <p>Current WPM: <span id="currentWPM">0</span></p>
-      <p>Average WPM: <span id="averageWPM">0</span></p>
+    <!-- Hidden Beta Features Section -->
+    <div class="beta-features" id="betaFeatures" style="display: none;">
+      <h2>Beta Features</h2>
+      <p>Welcome to the Beta Features section! Access all the cool upcoming features before anyone else.</p>
+      <!-- Add content related to beta features here -->
     </div>
 
-    <button id="raceBtn">Race Bot</button>
+    <!-- Embed New Stripe Payment Link -->
+    <div class="stripe-payment" id="stripePayment" style="display: none;">
+      <h2>Access Beta Features</h2>
+      <p>You need to purchase access to the beta features to unlock them.</p>
+      <iframe src="https://buy.stripe.com/fZe4hk1Cq1mhdEYfZf" width="400" height="600" frameborder="0"></iframe>
+    </div>
 
-    <footer>
-      <p>Type fast to win the race!</p>
-    </footer>
   </div>
 
   <script src="game.js"></script>
